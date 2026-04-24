@@ -20,8 +20,8 @@ class EmbeddingReducer:
     def reduce(self, word_vectors: np.ndarray) -> np.ndarray:
         """Performs dimensionality reduction using t-SNE and normalize the word vectors."""
         # Apply t-SNE to reduce dimensions to 2
-        word_tsne = # TODO: reduce
-        word_tsne = # TODO: normalize (see the picture from the description)
+        word_tsne = TSNE(n_components=2, random_state=42).fit_transform(word_vectors)
+        word_tsne = (word_tsne - word_tsne.mean(axis=0)) / word_tsne.std(axis=0)
         return word_tsne
 
 def reduce_and_draw(vectors: np.array, tokens: np.array) -> None:
