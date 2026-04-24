@@ -28,7 +28,13 @@ class LaplaceLanguageModel(NGramLanguageModel):
         self.vocab = set(token for token_counts in counts.values() for token in token_counts)
         self.probs = defaultdict(lambda: defaultdict(float))
 
-        # TODO: initialize self.probs
+        vocab_size = len(self.vocab)
+
+        for prefix, token_counts in counts.items():
+            total = sum(token_counts.values())
+            for token, count in token_counts.items():
+                # Laplace smoothing: (count + delta) / (total + delta * vocab_size)
+                self.probs[prefix][token] = (count + delta) / (total + delta * vocab_size)
             
     def get_possible_next_tokens(self, prefix: Tuple[str, ...]) -> Dict[str, float]:
         """

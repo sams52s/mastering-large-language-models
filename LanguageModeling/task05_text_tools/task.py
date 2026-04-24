@@ -66,8 +66,11 @@ class TextTools:
         pad = pad if pad is not None else cls.TOKEN_TO_ID[EOS]
         lines_matrix = np.full([len(lines), max_len], pad, dtype=dtype)
         for i in range(len(lines)):
-            line_ix = list(map(cls.TOKEN_TO_ID.__getitem__, lines[i][:max_len]))
-            # TODO: fill in the corresponding row of lines matrix (don't forget the padding!)
+            line_chars = lines[i][:max_len - 1]  # leave room for EOS
+            line_ix = list(map(cls.TOKEN_TO_ID.__getitem__, line_chars))
+            lines_matrix[i, :len(line_ix)] = line_ix
+            lines_matrix[i, len(line_ix)] = cls.TOKEN_TO_ID[EOS]  # place EOS right after content
+
         return torch.tensor(lines_matrix)
     
     @classmethod
