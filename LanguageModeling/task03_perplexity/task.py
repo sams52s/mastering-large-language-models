@@ -32,7 +32,13 @@ class Evaluator:
             tokens.append(EOS)
             pref = ''
             total_num_tokens += len(tokens)
-            # TODO: update total_logprob and prefix. Don't forget about min_logprob.
+
+            for token in tokens:
+                prob = model.get_next_token_prob(pref, token)
+                log_prob = np.log(prob) if prob > 0 else min_logprob
+                total_logprob += max(min_logprob, log_prob)
+                pref = pref + ' ' + token  # ← no .strip(), keeps leading space
+
         return np.exp(-total_logprob / total_num_tokens)
 
 
