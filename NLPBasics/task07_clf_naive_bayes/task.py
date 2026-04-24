@@ -28,17 +28,18 @@ class BinaryNaiveBayes:
         :param y: [batch_size] of binary targets {0, 1}
         """
         # Compute marginal probabilities p(y=k) for k=0,1
-        p_positive = # TODO
-        self.p_y = # TODO
+        p_positive = np.mean(y == 1)
+        self.p_y = np.array([1.0 - p_positive, p_positive])
 
         # Count word occurrences for each class
         # You might want to take delta into account on this stage
-        word_counts_negative = # TODO
-        word_counts_positive = # TODO
+        word_counts_negative = X[y == 0].sum(axis=0) + self.delta
+        word_counts_positive = X[y == 1].sum(axis=0) + self.delta
 
         # Estimate p(x | y=k) for k=0,1
-        self.p_x_given_positive = # TODO
-        self.p_x_given_negative = # TODO
+        self.p_x_given_positive = word_counts_positive / word_counts_positive.sum()
+
+        self.p_x_given_negative = word_counts_negative / word_counts_negative.sum()
 
         return self
 
@@ -53,8 +54,8 @@ class BinaryNaiveBayes:
             log p(y=k) + sum_i (count_i * log p(x_i | y=k)) where i is the index of the word in the vocabulary, count_i is the number of occurrences of the word in the text.
         Note: it's better that you write vectorized code here (without loops)
         """
-        score_negative = # TODO
-        score_positive = # TODO
+        score_negative = np.log(self.p_y[0]) + X @ np.log(self.p_x_given_negative)
+        score_positive = np.log(self.p_y[1]) + X @ np.log(self.p_x_given_positive)
 
         return np.vstack([score_negative, score_positive]).T
 
