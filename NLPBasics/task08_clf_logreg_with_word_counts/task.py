@@ -44,11 +44,11 @@ class MyLogisticRegression:
         self.model.fit(X_train, y_train)
         
         for name, X, y in [('train', X_train, y_train), ('test', X_test, y_test)]:
-            proba = # TODO: predict probabilities. Note: check what predict_proba returns in documentation
+            proba = proba = self.model.predict_proba(X)[:, 1]
             auc = roc_auc_score(y, proba)
             plt.plot(*roc_curve(y, proba)[:2], label='%s AUC=%.4f' % (name, auc))
 
-            acc = # TODO: compute accuracy
+            acc = self.model.score(X, y)
             print(f"{name} accuracy: {acc:.3f}")
         
         plt.plot([0, 1], [0, 1], '--', color='black')
