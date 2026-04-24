@@ -50,15 +50,22 @@ class CrossEntropyLoss(nn.Module):
         """
         device = logits.device
         masks = tt.compute_mask(input_idx).to(device)
-        # TODO: Step 1
+        mask = masks[:, 1:]  # [batch, seq_len-1]
 
-        # TODO: Step 2
+        # Step 2: flatten logits, exclude last position
+        # logits: [batch, n_tokens, seq_len] → drop last time step → rearrange
+        flat_logits = rearrange(logits[:, :, :-1], 'b c t -> (b t) c')  # [batch*(seq_len-1), n_tokens]
 
-        # TODO: Step 3
+        # Step 3: targets = input_idx excluding BOS, flattened
+        flat_targets = rearrange(input_idx[:, 1:], 'b t -> (b t)')  # [batch*(seq_len-1)]
 
-        # TODO: Step 4
-        # TODO: Step 5,6
+        # Step 4: apply mask to keep only valid positions
+        flat_mask = rearrange(mask, 'b t -> (b t)')  # [batch*(seq_len-1)]
+        valid_logits = flat_logits[flat_mask]  # [n_valid, n_tokens]
+        valid_targets = flat_targets[flat_mask]  # [n_valid]
 
+        # Steps 5 & 6: compute and return loss
+        return F.cross_entropy(valid_logits, valid_targets)
 
 def main():
     import torch
