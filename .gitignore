@@ -9,3 +9,7 @@ __pycache__/
 *.log
 
 .gensim_data/
+
+# generated outputs
+NLPBasics/data/*_bow.npy
+NLPBasics/task04_embedding_visualization/output/

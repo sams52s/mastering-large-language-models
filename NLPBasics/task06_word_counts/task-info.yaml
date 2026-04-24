@@ -5,45 +5,45 @@ files:
     visible: true
     placeholders:
       - offset: 1294
-        length: 27
+        length: 36
         placeholder_text: "# TODO: fill in the counter"
         initial_state:
           length: 27
           offset: 1294
         initialized_from_dependency: false
         encrypted_possible_answer: FY2PUl4+zelaYAC8ilE1x2dEf8oMfdKNkSFjzDfLZezC8bbrP7PTZXF4U+L77+xObN/Zhgrz/AUMjShQ2d6i+A==
-        selected: false
-        status: Unchecked
-      - offset: 1563
-        length: 6
+        selected: true
+        status: Solved
+      - offset: 1330
+        length: 0
         placeholder_text: "# TODO"
         initial_state:
           length: 6
           offset: 1563
         initialized_from_dependency: false
         encrypted_possible_answer: XEeCNSYpTBdDE/CgP4AzfVeT39ELb+UXx2bVFWzNmyvALFehujhqn5eHvgYgj/aL
-        selected: false
-        status: Unchecked
-      - offset: 1757
-        length: 6
+        selected: true
+        status: Solved
+      - offset: 1496
+        length: 61
         placeholder_text: "# TODO"
         initial_state:
           length: 6
           offset: 1757
         initialized_from_dependency: false
         encrypted_possible_answer: q/+bkwjjjNR2vrhzJ3BOp6l7uG5QR33vo9yt80OEuFyNBOk8UFWDPKUll5QFd8NyoaGO5pNHu8/g66JiGdZLZg==
-        selected: false
-        status: Unchecked
-      - offset: 2288
-        length: 6
+        selected: true
+        status: Solved
+      - offset: 2082
+        length: 212
         placeholder_text: "# TODO"
         initial_state:
           length: 6
           offset: 2288
         initialized_from_dependency: false
         encrypted_possible_answer: 00uJY/Y/PB5LLat9YOw4JpupW29CX+umeWC3RFGIp8NgAekjcO1a5TTAX9TdOqNf3JLUsd4b6VQgo2N5wZ7ZeTF/4CeTci0CLTwmYagNnityNiuSIl/F9gAvy4t8hZRBoSBC3zhy4lAMUZ3fUiK6Cxu7O5/iU+9/+wKsuysvplRQI6W1+VeC3jpFjwpDXg0FLM4XUKg14c+10ms9c6bPs+h/n1FvlS7SW52qNfwmFsHPuUtfr8+Yzs7/pGfMPr7B+P6M0unQ5Yps/U+HQC9hT2j8L8PUn5mTWCVHPISJdI91yrD+NwvCOoYDNKyA9iJel+su+rT+JLCWulkU0toY/Tq5blK5Mj1cbeBbc68DuwqVzB4KqiCfL7maLNMC0E2DW34doeWHF+SRbx+HxMe59Q==
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -54,5 +54,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 24 Apr 2026 17:12:27 UTC"
 record: -1
