@@ -32,9 +32,10 @@ class RNNLanguageModel(nn.Module, BaseLanguageModel):
         self.tokens = tokens
 
         # Important: You can experiment with the architecture
-        # TODO: create the layers of the RNN model
-        
-    
+        self.emb = nn.Embedding(n_tokens, emb_size)
+        self.rnn = nn.GRU(input_size=emb_size, hidden_size=hid_size, batch_first=True)
+        self.linear = nn.Linear(hid_size, n_tokens)
+
     def __call__(self, input_ix: torch.Tensor) -> torch.Tensor:
         """
         compute language model logits given input tokens
@@ -42,7 +43,10 @@ class RNNLanguageModel(nn.Module, BaseLanguageModel):
         :returns: pre-softmax linear outputs of language model [batch_size, sequence_length, n_tokens]
             these outputs will be used as logits to compute P(x_t | x_0, ..., x_{t - 1})
         """
-        pass # TODO: forward
+        embeds = self.emb(input_ix)  # [batch, seq_len, emb_size]
+        rnn_out, _ = self.rnn(embeds)  # [batch, seq_len, hid_size]
+        logits = self.linear(rnn_out)  # [batch, seq_len, n_tokens]
+        return logits
     
     def get_possible_next_tokens(self, prefix: str) -> dict:
         """ 
@@ -54,7 +58,11 @@ class RNNLanguageModel(nn.Module, BaseLanguageModel):
         2. Get models output
         3. Apply softmax and return the result
         """
-        pass # TODO
+        with torch.no_grad():
+            input_ix = tt.to_matrix([prefix])          # [1, seq_len]
+            logits = self(input_ix)                     # [1, seq_len, n_tokens]
+            probs = torch.softmax(logits[0, -1, :], dim=-1)  # [n_tokens]
+        return {token: probs[i].item() for i, token in enumerate(self.tokens)}
     
     def get_next_token_prob(self, prefix: str, next_token: str) -> float:
         """ :returns: probability of next_token given prefix, float """
