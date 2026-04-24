@@ -54,16 +54,22 @@ class Generator:
         :return: Predicted next token.
         """
         probs = self._get_tokens_probs_safe(prefix)
-        # TODO: temperature == 0 case
-        
-        pass # TODO: general case
+        tokens, probabilities = zip(*probs.items())
+        probabilities = np.array(probabilities, dtype=float)
+
+        if temperature == 0:
+            return tokens[int(np.argmax(probabilities))]
+
+        scaled_probs = probabilities ** (1.0 / temperature)
+        scaled_probs = scaled_probs / scaled_probs.sum()
+        return str(np.random.choice(tokens, p=scaled_probs))
     
     def get_next_token_nucleus(self, prefix: str, nucleus: float = 0.9) -> str:
         """
         Generate a sequence with nucleus sampling.
         
         :param prefix: Prefix of the sequence.
-        :param nucleus: N from the formulae above, N \in [0, 1]
+        :param nucleus: N from the formulae above, N in [0, 1]
         :return: Predicted next token.
         :note: make sure that nucleus always contains at least one word, even if p(w*) > nucleus
 
@@ -78,11 +84,19 @@ class Generator:
         tokens, probs = zip(*token_probs.items())
         assert np.isclose(sum(probs), 1), f"Sum of probabilities is not close to 1: {sum(probs)}"
 
-        # TODO: Step 1
-        # TODO: Step 2
-        
-        # TODO: Step 3
-        return next_token
+        sorted_probs_ids = np.argsort(probs)[::-1]
+        sorted_probs = np.array(probs)[sorted_probs_ids]
+        sorted_tokens = np.array(tokens)[sorted_probs_ids]
+
+        cum_probs = np.cumsum(sorted_probs)
+        mask = cum_probs <= nucleus
+        mask[0] = True
+
+        selected_tokens = sorted_tokens[mask]
+        selected_probs = sorted_probs[mask]
+        selected_probs = selected_probs / selected_probs.sum()
+        next_token = np.random.choice(selected_tokens, p=selected_probs)
+        return str(next_token)
     
     def generate_sequence(self, prefix: str = UNK, mode: str = 'sample', max_len: int = 100, **kwargs) -> List[str]:
         """
@@ -108,7 +122,16 @@ class Generator:
             sample_fn = partial(self.get_next_token_nucleus, nucleus=nucleus)
         
         while True:
-            pass # TODO: Generate next token. Note: Stop if EOS or max_len is reached
+            prefix_text = self.detokenize(sequence)
+            next_token = sample_fn(prefix_text)
+            sequence.append(next_token)
+
+            if next_token == EOS:
+                break
+
+            if len(sequence) >= max_len:
+                sequence.append(EOS)
+                break
         return sequence
 
 
