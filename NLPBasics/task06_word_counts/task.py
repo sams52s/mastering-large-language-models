@@ -42,28 +42,35 @@ class WordCounts:
         """Compute word counts from the given texts."""
         words_count = Counter()
         # TODO: fill in the counter
+        for text in texts:
+            words_count.update(text.split())
         return words_count
 
     def get_bow_vocabulary(self, texts: list[str], word_count: Counter, k: int = 10000) -> list[str]:
         """Get the Bag of Words vocabulary with up to k most frequent tokens."""
-        self.bow_vocabulary = # TODO
+        self.bow_vocabulary = [word for word, _ in word_count.most_common(k)]
         return self.bow_vocabulary
 
     def get_bow_to_id_mapping(self) -> Dict[str, int]:
         """Create a mapping {token -> its index in the vocabulary}."""
-        self.bow_to_id = # TODO
+        self.bow_to_id = {token: idx for idx, token in enumerate(self.bow_vocabulary)}
         return self.bow_to_id
 
     def text_to_bow(self, text: str) -> ndarray:
         """Convert a text string to an array of token counts based on the BoW vocabulary.
-        
+
         Steps:
         1. Tokenize the input text.
         2. For each token, get its index in the BoW vocabulary.
         3. Create a BoW vector with the token counts. (e.g. if word 'apply' with id 3 occurs 7 times, bow[3] = 7)
             Note: the length of BoW vector should be equal to the length of the BoW vocabulary.
         """
-        # TODO
+        bow = np.zeros(len(self.bow_vocabulary), dtype=np.int32)
+        for token in text.split():
+            token_id = self.bow_to_id.get(token)
+            if token_id is not None:
+                bow[token_id] += 1
+
         return bow
 
     def compute_bow_matrix(self, texts: ndarray) -> ndarray:
