@@ -65,6 +65,17 @@ class NGramLanguageModel(BaseLanguageModel):
         counts: DefaultDict[Tuple[str, ...], Counter[str]] = defaultdict(Counter)
 
         # TODO: fill in the counts
+        prefix_size = n - 1
+        for line in lines:
+            tokens = line.split() + [EOS]
+            history = [UNK] * prefix_size
+
+            for token in tokens:
+                prefix = tuple(history[-prefix_size:]) if prefix_size > 0 else tuple()
+                counts[prefix][token] += 1
+                if prefix_size > 0:
+                    history.append(token)
+
 
         return counts
 
@@ -87,7 +98,7 @@ class NGramLanguageModel(BaseLanguageModel):
         for pref, cnt in counts.items():
             total = sum(cnt.values())
             for token, count in cnt.items():
-                # TODO: fill in the probs for prefix, token. Formula: token_i / (sum_j token_j), where token_i is frequence of token_i after given prefix
+                self.probs[pref][token] = count / total
 
     def get_possible_next_tokens(self, prefix: str) -> Dict[str, float]:
         """
@@ -101,7 +112,17 @@ class NGramLanguageModel(BaseLanguageModel):
         2. The the distribution of tokens given prefix (use self.probs)
         """
         prefix_tokens = prefix.split()
-        pass # TODO
+        prefix_size = self.n - 1
+
+        if prefix_size == 0:
+            normalized_prefix = tuple()
+        elif len(prefix_tokens) < prefix_size:
+            normalized_prefix = tuple([UNK] * (prefix_size - len(prefix_tokens)) + prefix_tokens)
+        else:
+            normalized_prefix = tuple(prefix_tokens[-prefix_size:])
+
+        return dict(self.probs.get(normalized_prefix, {}))
+
 
     def get_next_token_prob(self, prefix: str, next_token: str) -> float:
         """
