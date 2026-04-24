@@ -42,20 +42,39 @@ class AdamW(Optimizer):
                 state = self.state[p]
 
                 # TODO: implement state creation and parameters initialization: step, momentum_t, rms_t, beta_1, beta_2
+                if len(state) == 0:
+                    state["step"] = 0
+                    state["momentum_t"] = torch.zeros_like(p.data)
+                    state["rms_t"] = torch.zeros_like(p.data)
+
+                beta_1, beta_2 = group["betas"]
+                momentum_t = state["momentum_t"]
+                rms_t = state["rms_t"]
+                state["step"] += 1
+
 
                 # Access hyperparameters from the `group` dictionary
                 alpha = group["lr"]
 
                 # TODO: update first and second moments of the gradients
+                momentum_t.mul_(beta_1).add_(grad, alpha=1 - beta_1)
+                rms_t.mul_(beta_2).addcmul_(grad, grad, value=1 - beta_2)
 
                 # TODO: Bias correction
 # Please note that we are using the "efficient version" given in
 # https://arxiv.org/abs/1412.6980
+                if group["correct_bias"]:
+                    alpha_t = alpha * ((1 - beta_2 ** state["step"]) ** 0.5) / (1 - beta_1 ** state["step"])
+                else:
+                    alpha_t = alpha
 
                 # Update parameters
-                params = p - alpha_t * momentum_t / (torch.sqrt(rms_t) + group['eps'])
+                # params = p - alpha_t * momentum_t / (torch.sqrt(rms_t) + group['eps'])
+                p.data.addcdiv_(momentum_t, torch.sqrt(rms_t) + group['eps'], value=-alpha_t)
 
                 # TODO: Add weight decay after the main gradient-based updates
 # Please note that the learning rate should be incorporated into this update
+                if group["weight_decay"] > 0:
+                    p.data.add_(p.data, alpha=-alpha * group["weight_decay"])
 
         return loss
