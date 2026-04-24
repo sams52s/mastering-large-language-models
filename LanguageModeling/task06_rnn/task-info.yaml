@@ -1,0 +1,48 @@
+type: edu
+custom_name: RNN
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1471
+        length: 42
+        placeholder_text: "# TODO: create the layers of the RNN model"
+        initial_state:
+          length: 42
+          offset: 1471
+        initialized_from_dependency: false
+        encrypted_possible_answer: YeL5DpSL1pjqrf8QDBAWuIDMQYghJKEdet7kSbl9jW7tpYSHTHnEqr0EX8ucHKOQ83S8EUcyQobzSIosRlZG+aeURkOufLAfzbXLV4gKDaLMUYg/vLyfTt5yNavDZWdfEJf7G94U3jWnl5wrCNkv+ENKNCfOyR4pZxEbAIBGIiXs25kenuI4mdrmaWbkzHtUx+xXQ8p35RYTrnIKnSetAdseJUewgax5Vx473iz+qL50RoKoW/8M1djJie5T6uj9
+        selected: false
+        status: Unchecked
+      - offset: 1980
+        length: 20
+        placeholder_text: "pass # TODO: forward"
+        initial_state:
+          length: 20
+          offset: 1980
+        initialized_from_dependency: false
+        encrypted_possible_answer: vpiBPaiJEhpUncN5LZBoKljVoJ5RRlAN5ByDmT/Siw619s+Z0vQPAAowQtdZ/2ZrYh29x17iobF3i2spaJAgmD7sTt+Yy75m2x3Uh1f0bIo0JKTBeE9D+oOdQUpMPS+cJ3Kk7aSXiIYLe1foK8exdeW5UEMPp9nNcwXBiOOqFg8=
+        selected: false
+        status: Unchecked
+      - offset: 2335
+        length: 11
+        placeholder_text: "pass # TODO"
+        initial_state:
+          length: 11
+          offset: 2335
+        initialized_from_dependency: false
+        encrypted_possible_answer: t+D3K9zDjtkCh/1Zj0FA5JXFK38mqeFNFazkJP570C2dUwpXoJR5pAiPraN2MFEieABFyO43rzbIUGCkxMWQGUP4lfM0cudYqNoYV7RcqQtYrcIAy6HyZegl7LCax6fotB/sz5X+EpOVad7jLU+5EgkHpGBCw8RfI7HzNCE6wOOZJBlurT1x164Jn0kUCAgi0QWk/fI0EL9KrDqLgwHCfHiaZ0cBOt1zH83Pds8maCJ1pUYg+MFd0Yw0KEXhxAgvc7QZFuuZVMOMKytkb1e2NTv6XXouUtiwbSEfO6iPDIPLt/edCn420HVq2iujxRgs
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

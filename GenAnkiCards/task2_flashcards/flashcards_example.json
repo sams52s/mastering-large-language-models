@@ -1,0 +1,52 @@
+[
+  {
+    "word": "about",
+    "language": "Greek",
+    "level": "A2",
+    "translation": "σχετικά με",
+    "definition": "concerning; on the subject of.",
+    "example_sentence": "Το βιβλίο είναι σχετικά με την ιστορία.",
+    "example_translation": "The book is about history.",
+    "mnemonic": "Think of 'sχετικά' as 'skeptical', you are skeptical about something."
+  },
+  {
+    "word": "above",
+    "language": "Greek",
+    "level": "A2",
+    "translation": "πάνω από",
+    "definition": "in or to a higher position.",
+    "example_sentence": "Το ελικόπτερο πετάει πάνω από την πόλη.",
+    "example_translation": "The helicopter flies above the city.",
+    "mnemonic": "Imagine a 'pan' flying above you, 'πάνω από'."
+  },
+  {
+    "word": "across",
+    "language": "Greek",
+    "level": "A2",
+    "translation": "απέναντι",
+    "definition": "from one side to the other of something.",
+    "example_sentence": "Πήγα απέναντι στο δρόμο.",
+    "example_translation": "I went across the street.",
+    "mnemonic": "Think of 'απέναντι' as 'a pen', you see a pen across the table."
+  },
+  {
+    "word": "act",
+    "language": "Greek",
+    "level": "A2",
+    "translation": "πράξη",
+    "definition": "to take action; do something.",
+    "example_sentence": "Η πράξη του ήταν γενναία.",
+    "example_translation": "His act was brave.",
+    "mnemonic": "Picture a 'prank', an act of mischief, similar to 'πράξη'."
+  },
+  {
+    "word": "action",
+    "language": "Greek",
+    "level": "A2",
+    "translation": "δράση",
+    "definition": "the fact or process of doing something.",
+    "example_sentence": "Η δράση της ταινίας ήταν συναρπαστική.",
+    "example_translation": "The action of the movie was exciting.",
+    "mnemonic": "Imagine a 'drama' filled with action, 'δράση'."
+  }
+]

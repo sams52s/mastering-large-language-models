@@ -1,0 +1,72 @@
+type: edu
+custom_name: Dataset
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1483
+        length: 109
+        placeholder_text: "# TODO: update the lists above. Don't forget about the guard\
+      \ in case negative_field is not present in the row"
+        initial_state:
+          length: 109
+          offset: 1483
+        initialized_from_dependency: false
+        encrypted_possible_answer: /OBabAn+PZiUdTNV274i/3YlaZnj3mo8ghbH6rsTLhfHvhaNiCf76xsYDSSFO4Vlg1EEi/8B4SyykQ4vJ0/eZ9Zj2W3z5EzgGsT7cBXLQ4h+afe2JLAbD29FVJm0DNb4E1vY5fCI7dQxfYWf+mdnOtWpP3Pu1p9UhZ6oG+S2pYPeFzjCod9vRphSictd7ZSptg0BipdQlFpQ6RrY1NtoBYuiQtaZCAR3EYTE7dUCwsPPDzXp/dG8W+CAx38/lN6S815wUsdD4i71unckIWDeCK5j8WR1++oXewTs7trSYZ/q4QVcLMeVi4miAMRAgDW1iI4t9vqi3ReOSNcV+OEDeJNSsWnMgcWfQw62EMH46vk=
+        selected: false
+        status: Unchecked
+      - offset: 1617
+        length: 64
+        placeholder_text: "# TODO: create HF dataset with fields anchor, positive, negative"
+        initial_state:
+          length: 64
+          offset: 1617
+        initialized_from_dependency: false
+        encrypted_possible_answer: ty9FcOsVpGAWIo7UwNlThNfd/5LboVbBnAAJFF/at07xzbe5T3Q/qXF377rKiiF9nigCm5+Iy/GOJVpdZu63DfqAzHv8zd096mRJdZaj3xKLxkGThZLIdRoLd9b40trcr2L9ZHmvN//P2RQW2iVUaEA5SHgQXDvRn6ZfzTGRmQOpamFpAxgdV1uxbBR4JLnm
+        selected: false
+        status: Unchecked
+      - offset: 2239
+        length: 22
+        placeholder_text: "# TODO: merge datasets"
+        initial_state:
+          length: 22
+          offset: 2239
+        initialized_from_dependency: false
+        encrypted_possible_answer: H12R1AgbEpWh7iQksFpAlQGGqbMJZWL2GpDf7HEZqjE=
+        selected: false
+        status: Unchecked
+      - offset: 2278
+        length: 63
+        placeholder_text: "# TODO: split on train and test (note: don't forget to shuffle)"
+        initial_state:
+          length: 63
+          offset: 2278
+        initialized_from_dependency: false
+        encrypted_possible_answer: m0L2ii+LPZTJV8RmQDXOfd+M1Xl4NtUl9UXK8vTKZ28PWrhqm5NkU4eB+68ejaKC00sx7IkJGVGh6xRq+I6QKiVCUucsooJbrC9ouc3Fhlo=
+        selected: false
+        status: Unchecked
+      - offset: 2357
+        length: 25
+        placeholder_text: "# TODO: return the result"
+        initial_state:
+          length: 25
+          offset: 2357
+        initialized_from_dependency: false
+        encrypted_possible_answer: 72IQkMD1C40TSpRc/le3udpqyL8VHn/zY2vGJ9saI613a4n3OK9//WCTLMwA1nmnqgXmDgdbI704W5TmmAYhtQ==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: run.py
+    visible: true
+    learner_created: false
+status: Unchecked
+record: -1

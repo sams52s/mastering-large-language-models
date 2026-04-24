@@ -1,0 +1,42 @@
+type: edu
+custom_name: Dataset
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1427
+        length: 50
+        placeholder_text: "# TODO: add \"text\" column. note: use self.num_proc"
+        initial_state:
+          length: 50
+          offset: 1427
+        initialized_from_dependency: false
+        encrypted_possible_answer: CTOlLOzQGLVBhTQ/9b8wbo8mmY2tPj4TGGcXGUkGAyDajfTEoTpsJPfwFvxGdjh/ljzMuaOlObEkcP4lWtl1+Crnw0lAV7J8BYFnlW3uBMN96h+ZPbWe+C+N1z8Cr2j6jR4g64XOwijedRy43SqEJqShG0iOlAK/2muMuDasfz/QUPPYM1kkXfIclDt/jZUj
+        selected: false
+        status: Unchecked
+      - offset: 1830
+        length: 132
+        placeholder_text: "# TODO: tokenize the texts and leave only attention mask and\
+      \ input ids in the dataset (both are the result of tokenizer application)"
+        initial_state:
+          length: 132
+          offset: 1830
+        initialized_from_dependency: false
+        encrypted_possible_answer: dx1raggmXOVi6Xm0nftzvhXhtU/+S4gAtDk1108b3pb3hkNHphay/1+pOax0KEYSDFe3xvOkAQd8DdBD70k/gzq1yZxCyWAsz+orZy8atDuiCYGbTtOsD1fW/t9/fAa4r5BqqtxaSh0op8nDVa/c7T6gOTDQgCo1bDbsTbZdMjI711+uXXDDtqU2J4Ig0Fxa8fdknmQa2sZ7/GDWlIPHzlfTEjtIQq8L9vp/oMBDAlG9ennKVTsGbjAV2vewuggsFX3lhVzuRhZFFmfgIwtmeGFTzZzMvxcsH05GVcBIBUQ=
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: run.py
+    visible: true
+    learner_created: false
+status: Unchecked
+record: -1

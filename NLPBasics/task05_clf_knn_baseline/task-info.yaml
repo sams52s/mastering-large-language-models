@@ -1,0 +1,49 @@
+type: edu
+custom_name: k-Nearest Neighbors Classification
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1066
+        length: 86
+        placeholder_text: "pass # TODO: compute cosine similarity. Note: if any vector\
+      \ close to zero, return zero"
+        initial_state:
+          length: 86
+          offset: 1066
+        initialized_from_dependency: false
+        encrypted_possible_answer: uMLbWZgFXIrvBSRbCSA8P3GVIcxa5rdhVBnBFF5B3HlMs56ghZKr2yc6ThgKYdoqU2CWBbui22Dep/BdK7PqvnsKm9kU4ZBRZfsXUpQXRku5RRvyw6T21QULarBDaF0sYcH7jwd3ryGiIW9eLXMGC5c4GIbjuD8CPZGaHXUY6ObJvfIr3VoLA83y/ws7fGrVaXXkBt39qNsgs+pr5RxndPQpzzG8hbKhkyIf4dk7oJbhnky70vmHkfR0B6DZw3eu
+        selected: false
+        status: Unchecked
+      - offset: 1908
+        length: 28
+        placeholder_text: "# TODO: get top_k_sorted_ids"
+        initial_state:
+          length: 28
+          offset: 1908
+        initialized_from_dependency: false
+        encrypted_possible_answer: EGPLTt7wS2YKJeqB1xHpXZz1uMJoaJdwQbObxy/5VFPATjbooegrqpwWRWz+lHq464zGK020ixVUyX1QV2eI9YmTtuJLZ54jaIGhJ7wm/ajtG+n4btB7sxRVw6AGHgN5Gbz/a7RjhKZQucQEnulhbj3SN2WO8e2x1/13F0Xh6XHa1+bSCgg6gIKcERgl4esRpcFm6Djtc/IH7wFbTCpSeshOzA9umHGoZOQ4/kTHfWzdH0kmRl6ZYlOhYM3cv6eY2+ZLDJ5Mg2gUlWIChX4AHWy93jDT9GGTe2hqyz7G0tC+oNJp/5cy2e1TI77MTF9m
+        selected: false
+        status: Unchecked
+      - offset: 2669
+        length: 37
+        placeholder_text: "# TODO: extract pred for given phrase"
+        initial_state:
+          length: 37
+          offset: 2669
+        initialized_from_dependency: false
+        encrypted_possible_answer: fytSDoDLoQdHKgTbodOUuKengMSR9q7TijOqvZPbHvPlIoMlSz1ZLn6e3D64Q6yQ70Xiwh1j/nuk9Y1UhDO8npu8YiWU24br9HtYJGEXGJ0Xo5qL8qReROxlJl1o4Bxb
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

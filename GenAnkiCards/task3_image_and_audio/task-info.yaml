@@ -1,0 +1,85 @@
+type: edu
+custom_name: Image & Audio Components
+files:
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: image_generator.py
+    visible: true
+    placeholders:
+      - offset: 3529
+        length: 68
+        placeholder_text: "# TODO: use gpt-image-1 model to generate images based on the\
+      \ prompt"
+        initial_state:
+          length: 68
+          offset: 3529
+        initialized_from_dependency: false
+        encrypted_possible_answer: fPV66nJqEAnOJwf4m/n9i0gzNiNY/QOVSsWrHD3Q4tuusyoIHdjOCuObc5urK4t8FPONf6R2vd7nF+5LmHeTW6/OrQYLl2DrWlE8HGCXK+pYYvaTAchbzm2d/jJQHQNMx0vgwd3s/aGRJEQXzBuHHT9P0O1SZVE+xoCQqK/i8n9PdziqXfa9bUd6kxRzWAIwOwJu5rK6MMcrYm4kD3tRG5dY7dUQfGBKbAih8rtM+zmqbIeVe7z6DzSXDHW4hFOnUl1vMfbeqwJosv8FrRuw6x7d7CctSrkG8Y65QxgM7EF61jbcU9M6Jc3PxNdefP/sU4zhTfcLC0OapcHcwZYfdA==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: dataclasses.py
+    visible: true
+    learner_created: false
+  - name: audio_generator.py
+    visible: true
+    placeholders:
+      - offset: 3375
+        length: 53
+        placeholder_text: "None # TODO: implement gTTS call for audio generation"
+        initial_state:
+          length: 53
+          offset: 3375
+        initialized_from_dependency: false
+        encrypted_possible_answer: tCG39ARbyIWWXdzkPH9OcVD788hhDQAdJXxVtFuRutUfP2YqMhZurpcjyoUTtHzmcRXlaYAhfZhCIWzAkqQX8g==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: images/knock_9dd72e66bc2e.png
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: images/boring_b64047f6d54a.png
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: images/advance_6a2fe5faefa2.png
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: audio/boring_0ea4648be678.mp3
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: audio/knock_b6f1f219656e.mp3
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: audio/advance_669eacdd47e3.mp3
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: audio/minced_meat_381752298b42.mp3
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: images/minced_meat_27aeabbd5d85.png
+    visible: true
+    is_binary: true
+    learner_created: false
+  - name: main.py
+    visible: true
+    learner_created: false
+  - name: data/flashcards.sqlite
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

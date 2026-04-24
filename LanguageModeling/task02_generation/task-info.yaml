@@ -1,0 +1,79 @@
+type: edu
+custom_name: Text Generation with Sampling Strategies
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 2072
+        length: 29
+        placeholder_text: "# TODO: temperature == 0 case"
+        initial_state:
+          length: 29
+          offset: 2072
+        initialized_from_dependency: false
+        encrypted_possible_answer: Z9OOjW1K7MvVqV8b7UgFr9S8MJYtr7X6pP9VT4czj0gn/XsLuewtWjPIP/+6rqrHcbLdxkJPIN8EeDMONbzCNFhi7W8BNKc8easZcx5nclg=
+        selected: false
+        status: Unchecked
+      - offset: 2119
+        length: 25
+        placeholder_text: "pass # TODO: general case"
+        initial_state:
+          length: 25
+          offset: 2119
+        initialized_from_dependency: false
+        encrypted_possible_answer: GvwYJEEGWpF0bZr9RZdLH8SFbVsYDjy4aC/HDfOJQFf0pIU2eNZ6BvwG2diF5FA4oK3lNLXez++v4ZogVVnHbHQbcklCM0W4fEiD6Ixs+N4SMGy+e9KHQHnDwFVQha+NNDbVlotz1oX6r0/KNXwbfw2/q2uHdeH1fssSElrg3cKi/mJ0LiyjQvUNXJwZP5JKi/ge3AZYlF2HabDsT7EE1301WxvmFjODVPUgCIXmwYQ77lnoxRYSX+XnmVbXOpubNAoC5AD6YRTtlAjF/ek7okL3sQuqrH182W2m82ccJspB+QiiwC9HtFOv/ziQAnY/
+        selected: false
+        status: Unchecked
+      - offset: 3293
+        length: 14
+        placeholder_text: "# TODO: Step 1"
+        initial_state:
+          length: 14
+          offset: 3293
+        initialized_from_dependency: false
+        encrypted_possible_answer: YyX03CwnrPZV6xl/XRU+V6Im2vh0NTyBbIg7aA7gqGm0jkGd/pysH78HV06vLPTQjplrWBvn/1obAYc3jD9um+Rdb1GfBfzfx3nLKQ5fkJ10siYHAfY7sBpJXBN+rVlBtmcHPiyZoZeqeieZJsdR3imfa2O6nIkX3THnWYjSUl8=
+        selected: false
+        status: Unchecked
+      - offset: 3316
+        length: 14
+        placeholder_text: "# TODO: Step 2"
+        initial_state:
+          length: 14
+          offset: 3316
+        initialized_from_dependency: false
+        encrypted_possible_answer: 0HmS+YlmLywJJcgi/Lvtuawzj0CIKme0/ija+onwtGvO9/1LejLceB2JxdsrS7d3UBhpjHsbcA1twtq9g0kCRIE3XUUF9H9PFv7VFYvJQiGSDcIHqnHNRzxkk1TZiG85440TmyAvlQkyQ+ZHJL2GD4tDWi7CxaHaYvsTG83hbuU=
+        selected: false
+        status: Unchecked
+      - offset: 3348
+        length: 14
+        placeholder_text: "# TODO: Step 3"
+        initial_state:
+          length: 14
+          offset: 3348
+        initialized_from_dependency: false
+        encrypted_possible_answer: As0Jhc6agMCQ7oupfFm0Hpl79m/pgg/vZMOitkBtBuurF+a2zcC9fuhN1X+tOBnElQ18+/tYVstzohCYtK1WnaQpkYLZSi1yvp3E5aQsNfc0Vi+QNfSWZQo2UHwDW3XSjwOzpHsFm5tVMwgSBHunzJ5aW8gRnQ0dCyg91dqD8pSSU3RuLhlKtA7AUTcCoT62+edZNT+ryiDftsNFdvnSRC7qIEfSOURwpEiPUziDc73qxEOLKklaDLI0pk16xUczgfND2SdiBfxQo72BepK8YJAX5JtomdisklbrEA/8qW0UI7/xxGr5zoSoyOrpmwDH
+        selected: false
+        status: Unchecked
+      - offset: 4441
+        length: 73
+        placeholder_text: "pass # TODO: Generate next token. Note: Stop if EOS or max_len\
+      \ is reached"
+        initial_state:
+          length: 73
+          offset: 4441
+        initialized_from_dependency: false
+        encrypted_possible_answer: 8RKscQGhbYqqlACwIDB+M7ayrTwD3NOM+vzrG8Nvz3Yb3qYlXgGB/cKc6TJdOvXRWrQuPg7w7P6OHAS/XquqNUqiSe0ijjxTOH0GTI/Yh+LdNrA2lRaVpaKxaTOFKGz2I8PpFZnOVyaLT3BCcsrAyW7XFSXtim9svqRESKPUgm3OlGvDBCOyn5wjQ8F85vHVo/eP6+V63jny3Q7i/xCYlHsdSTRcryQqQo7w9aioYwLEFnm8g9bIeruJEGRXlqsAAyl2LHg3yBEu7GWd0ZiBGqGduz2rNhbhp2DSIU61sQY5X+uLRO6ppw9sJQa3IHTRVvNq5uwlbz8Efh1PLJixNQ==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

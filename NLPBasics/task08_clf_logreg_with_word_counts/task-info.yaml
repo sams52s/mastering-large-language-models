@@ -1,0 +1,39 @@
+type: edu
+custom_name: Logistic Regression with Word Counts
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1604
+        length: 86
+        placeholder_text: "# TODO: predict probabilities. Note: check what predict_proba\
+      \ returns in documentation"
+        initial_state:
+          length: 86
+          offset: 1604
+        initialized_from_dependency: false
+        encrypted_possible_answer: RNNBBhiKJqIEsLFnnwxlRWVvYpl1o+rrZKl8SGzAGmFfiyLWQFV+QTQ3QyitZxKH
+        selected: false
+        status: Unchecked
+      - offset: 1834
+        length: 24
+        placeholder_text: "# TODO: compute accuracy"
+        initial_state:
+          length: 24
+          offset: 1834
+        initialized_from_dependency: false
+        encrypted_possible_answer: h9Q6Mgniv3Riz8JgIALGZIhyzXF+AcvDbbtprZKHCgbwqyyywYu63mj1aJdh56Kp
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

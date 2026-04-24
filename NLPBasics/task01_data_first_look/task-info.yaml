@@ -1,0 +1,87 @@
+type: edu
+custom_name: Data Exploration and Quality Assessment
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 648
+        length: 15
+        placeholder_text: "pass # TODO"
+        initial_state:
+          length: 11
+          offset: 648
+        initialized_from_dependency: false
+        encrypted_possible_answer: YCLd+1Kph2cLKekp8ZNFXA==
+        selected: true
+        status: Solved
+      - offset: 980
+        length: 25
+        placeholder_text: "pass # TODO"
+        initial_state:
+          length: 11
+          offset: 976
+        initialized_from_dependency: false
+        encrypted_possible_answer: WNGY3LkWhpUPzhQ634Meu6+wbLd4VZ4u/TzS56Sw75w=
+        selected: true
+        status: Solved
+      - offset: 1141
+        length: 34
+        placeholder_text: "pass # TODO"
+        initial_state:
+          length: 11
+          offset: 1123
+        initialized_from_dependency: false
+        encrypted_possible_answer: JmuRluUj0MVcqJDlv+bIM0RVlElL4ZZQk+3Hp9KmbcG8a7fIa1wV0AnnTuEvrtiQ
+        selected: false
+        status: Solved
+      - offset: 1420
+        length: 42
+        placeholder_text: "pass # TODO"
+        initial_state:
+          length: 11
+          offset: 1379
+        initialized_from_dependency: false
+        encrypted_possible_answer: EhYIWr7OGbVrnnbyoErzNguPNH8fK91yoHgAKTnt8PQH/MxDDeKJ9+yC19jjwdPY
+        selected: true
+        status: Solved
+      - offset: 1619
+        length: 29
+        placeholder_text: "pass # TODO"
+        initial_state:
+          length: 11
+          offset: 1548
+        initialized_from_dependency: false
+        encrypted_possible_answer: 4stCJyBdjHBAUraEciQxVLJnH04tIgjzyvbgFbYV+Yw=
+        selected: true
+        status: Solved
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img/image_0_dark.png
+    visible: false
+    is_binary: true
+    learner_created: false
+  - name: img/image_0.png
+    visible: false
+    is_binary: true
+    learner_created: false
+  - name: img/image_1_dark.png
+    visible: false
+    is_binary: true
+    learner_created: false
+  - name: img/image_1.png
+    visible: false
+    is_binary: true
+    learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 24 Apr 2026 07:07:08 UTC"
+record: -1

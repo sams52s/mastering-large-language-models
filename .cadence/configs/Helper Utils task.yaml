@@ -1,0 +1,49 @@
+project_name: Default
+working_dir: ./FineTuning/task4_helpers
+cmd:
+- python run.py
+provisioning:
+  gpu_type: a10g
+  gpu_count: 1
+  cpu_count: 32
+  ram: 128
+  blank: false
+teamcity:
+  url: https://api.cadence.jetbrains.com
+  build_conf_id: id4728c0a5bd4e491aB70781f42bedc7db_JetTrain
+env:
+  variables: {}
+  python:
+    pip:
+      requirements_path: FineTuning/requirements.txt
+    version: 3.11.13
+  secrets:
+    variables: {}
+    ssh_keys: []
+  aws:
+    sync_config: false
+    sync_credentials: false
+    sync_cache: false
+project_sync:
+  local:
+    root: "."
+    storage_name: Cadence Storage
+    uri: ""
+    exclude:
+    - /.coursecreator/**
+    - /.venv/**
+    include: []
+    sync_back: false
+    snapshots: true
+    storage_type: DEFAULT
+inputs: []
+outputs:
+- type: OUTPUT
+  storage_name: Cadence Storage
+  uri: ""
+  path: "."
+  acceleration: false
+  storage_type: DEFAULT
+mounts: []
+storages: []
+description: Cadence preset for the Helper Utils task

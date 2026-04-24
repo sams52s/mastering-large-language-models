@@ -1,0 +1,98 @@
+type: edu
+custom_name: Naive Bayes Classifier
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 902
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 902
+        initialized_from_dependency: false
+        encrypted_possible_answer: E4gWVp/7hiPdWyrRGOjNpw==
+        selected: false
+        status: Unchecked
+      - offset: 928
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 928
+        initialized_from_dependency: false
+        encrypted_possible_answer: PIHeCQeUiGrUlpkPAtA1w/RXiLn4rM3vx7g/JLoz39l+cWakn5LKzAdHMWN7S96I
+        selected: false
+        status: Unchecked
+      - offset: 1081
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 1081
+        initialized_from_dependency: false
+        encrypted_possible_answer: Ng3ztIlDupV6An2dtxGSnP3RShXRq0+gt6K5aFR8zSBEEaeRhhSPVAFW0odl0aB+
+        selected: false
+        status: Unchecked
+      - offset: 1119
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 1119
+        initialized_from_dependency: false
+        encrypted_possible_answer: Tyd2g+xJFkw7lLR6SuabnbLBbM1BkIcd5tUEoksRKm9REvPVRz/sA8rPGQS6wt3+
+        selected: false
+        status: Unchecked
+      - offset: 1201
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 1201
+        initialized_from_dependency: false
+        encrypted_possible_answer: ZBL/1RDgB0CBr2vl3aagr+7S3RVGiVcdOdbKyZAX5UElXbKj/vMcaKc84/M0qRW9km3yLOGX2o6QMjZeW7RzFg==
+        selected: false
+        status: Unchecked
+      - offset: 1242
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 1242
+        initialized_from_dependency: false
+        encrypted_possible_answer: DqqmVsKwVrJvUGM1DBEKmeDD2s+wMuSGu2vgRJK5cahyOq9oFruUvEAYIf1/yPEKlmWzJKHVWcwHnQD7GFUYew==
+        selected: false
+        status: Unchecked
+      - offset: 1924
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 1924
+        initialized_from_dependency: false
+        encrypted_possible_answer: dm+yDst9mtDBJqQTDPtrvw5CT3dP8P0/NRIrajNlaVxX0yn/wk06OjGAhM7WrnP/+T1vXI1i2a1BzaT6Z0vX7ES+1Kqz+UP+lToH6qzhQ1o=
+        selected: false
+        status: Unchecked
+      - offset: 1956
+        length: 6
+        placeholder_text: "# TODO"
+        initial_state:
+          length: 6
+          offset: 1956
+        initialized_from_dependency: false
+        encrypted_possible_answer: dm+yDst9mtDBJqQTDPtrvxKXFDpTXLuCGaOGA8DKTJ+Bqr1YFH9r57TmNZc3CrSQ78UIgiQJgNYz/gZtrrynO4FXxzn1DejWFOEz4QIwntY=
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

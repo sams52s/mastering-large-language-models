@@ -1,0 +1,42 @@
+type: edu
+custom_name: Embedding Visualization with t-SNE
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 708
+        length: 14
+        placeholder_text: "# TODO: reduce"
+        initial_state:
+          length: 14
+          offset: 708
+        initialized_from_dependency: false
+        encrypted_possible_answer: /37vK/YE4L3WjLCa8mOXb+9BMgy/1c5KjptOnmkr96nTIQhfDcwnpsJPAqLplAF8t3DDsSpHhdHUQo8CndlMkw==
+        selected: false
+        status: Unchecked
+      - offset: 743
+        length: 56
+        placeholder_text: "# TODO: normalize (see the picture from the description)"
+        initial_state:
+          length: 56
+          offset: 743
+        initialized_from_dependency: false
+        encrypted_possible_answer: MFAJDvXh1WZf6zucvhxtoPr2WJX5RokAPgcArRIANfzd2+T/EKqcxQSnvENbKG+6MPrn8ZJ5dSbDBYPQ4534VA==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: zscore.png
+    visible: false
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

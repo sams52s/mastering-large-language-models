@@ -1,0 +1,54 @@
+type: edu
+custom_name: Word Embeddings with GloVe
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1210
+        length: 277
+        placeholder_text: "pass # TODO: use model.get_vector"
+        initial_state:
+          length: 33
+          offset: 1210
+        initialized_from_dependency: false
+        encrypted_possible_answer: z2omi54C4nu1kBChCvOMChMdZ2+4VOLPXhJGObDs8Vg0Qitp0xvpcNHkJrXgA86fTpHW6g4hFPG658WlP1wg19mx0H+WAunXpxs4AtNg8oVMsXSnkuZgTTdQ9ofJR0zvc9KyzOWYPafaM/i8Xam/KA==
+        selected: true
+        status: Solved
+      - offset: 1909
+        length: 277
+        placeholder_text: "pass # TODO: YOUR CODE HERE"
+        initial_state:
+          length: 27
+          offset: 1665
+        initialized_from_dependency: false
+        encrypted_possible_answer: Ux/a5i2OjDojqLPxuvMDDb2kugPq1Zt6fYOqAHH4IKERaL24VWfJDzleWWOl9/MoiYNXLS30p/kS+vKcDJpoXcNrC9Wodj2EeQPVmm9jUiF5+s7oHBWy91RAOWHmqFB6BjAi26oRe70wbhDEGjXFd27C22pc6cW41UGEyJuYPLKM2IwcUNVIqpz6WDrMeZn3XZu+TvKHWRADYAS61s0VFP2vDmU0j6ecLEJDoi+fnZ+5c0134eTP2we66h8MolQuoyHB6spV2CjIrpGEPVpr/m1tKqge4P6d5l0CQJpZNhtECvRPhcilEx7vsQGIBsLYWh0nnOA/uMQJhLIItevwpYI79lj/xx33BdJPB9Xu3YvxEkjdBdGdENsUuh+0uJxhmn9XmTRbYa0WAkQ3lti7qQ==
+        selected: true
+        status: Solved
+      - offset: 2585
+        length: 351
+        placeholder_text: "pass # TODO: YOUR CODE HERE"
+        initial_state:
+          length: 27
+          offset: 2091
+        initialized_from_dependency: false
+        encrypted_possible_answer: I1wAt2yLmkznJWemQod99cmYt8SxedNGnCAhEp9zYGq76YDCqfDHtABtZY4J5jT2RvIqGZQnDv2XZMKNB415im7VHQ8qh5OIxs/acyWmn3mFzls8Pwwdz3BAPnOJV+3LH5U0qCw/5rTakqm2kD3Kx6Y5vNRcCVkOQqUKm6Iytem7ewBY5cFL1Vw7KYiT5x8DWtujugYtmUgwge0VrJxb6JTeKlQfYFPTrGhy/CoJ987jvoUeQE6F6Hk2+MMPFSYKYtxbcDX/tPvBjHONRsaA4Q==
+        selected: true
+        status: Solved
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: .gensim_data/information.json
+    visible: true
+    learner_created: true
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 24 Apr 2026 16:45:41 UTC"
+record: -1

@@ -1,0 +1,29 @@
+type: edu
+custom_name: Text Tools
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 2486
+        length: 81
+        placeholder_text: "# TODO: fill in the corresponding row of lines matrix (don't\
+      \ forget the padding!)"
+        initial_state:
+          length: 81
+          offset: 2486
+        initialized_from_dependency: false
+        encrypted_possible_answer: 1o8YruKYu+53DclKOrKYanIy+/Oylk4QdlRtXUHnHM8ONJq0FDQHlXuPiFC8JRdisVnItgclMlpe1U958NRXKWuk/HoAvHk0IiEsHD9KBvMoF9BYiDPedFwww1tUjVDBdnXkk7Tkwki0viIDFaY5bvFIxWKHZfo4zm6Qpez6pPWCM3rMhvARvJbMqlaaGb0tjISdqWLP4qdWB7zAaAFFTcPHt6N5TruLXfkS2FREPBs=
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

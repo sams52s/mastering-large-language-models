@@ -1,0 +1,71 @@
+type: edu
+custom_name: Training
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 1239
+        length: 26
+        placeholder_text: "# TODO: Create LoRA config"
+        initial_state:
+          length: 26
+          offset: 1239
+        initialized_from_dependency: false
+        encrypted_possible_answer: kUqI0EAzS3CDicIhbkxt0RH7VSA6S1pbhlAMt86zcbqkgA1bI9RhuRmEtjSOru0SZ6aRhhiNEu5Cf3CWzgu/IJjAXkONHI9FS3W8L7oaeua+PpR+1D/kjTkwSxe1Uw5KUwyTuH5t8Zs8CMrd2UxZ2aDqlq3qvE+6wb6uxxpVNx9dkJRmZTfUQrSCyEBZs06kjjw/CxS/NAi0D+GrzmlEqBopJeixLOgkzuWDN/CLyzgyN/SEqArQpnOJ/eS8H/GxfD8bPJOvZ2Lz9NWsjTxAxQ==
+        selected: false
+        status: Unchecked
+      - offset: 1281
+        length: 37
+        placeholder_text: "# TODO: Add LoRA adapter to the model"
+        initial_state:
+          length: 37
+          offset: 1281
+        initialized_from_dependency: false
+        encrypted_possible_answer: 5drf/BzNG2P5bjeeHn2s/y+9a668r2bpeyXIL5gig9jo+lp98NDBnafc5S6EONaO4I2hIB8WkwEL+VssbJtgvQ==
+        selected: false
+        status: Unchecked
+      - offset: 3298
+        length: 27
+        placeholder_text: "# TODO: add other arguments"
+        initial_state:
+          length: 27
+          offset: 3298
+        initialized_from_dependency: false
+        encrypted_possible_answer: 7u3Am0zeCLL3vqMtRKaP5xkAfqqGqS3ZVuU/52sEwJY0oXPc27I55LGI59jxMkIUGpgjXDSlnIfrFmZTALHDoXA1irUN3cFvg3chaEqWLRAxftaNkkGfvfBNmyutIE2N9M2T6uhMWSXzDFYed1MJYd274DlXY0gJeU94Trv77JJwgf/doxHKWwvDxBT68hjljYCSwDPf3Yy7XKR55WS8and4n8XvFGA1Ig7IePpbKu95nTlqyoekJCLYydh2M1NioUgp42LRJt6WFuFi4PsoNgUMXmGSajpo2rrOpdaDDd6Nvse+uS9wnXaVWKetMh3A
+        selected: false
+        status: Unchecked
+      - offset: 3349
+        length: 24
+        placeholder_text: "# TODO: create evaluator"
+        initial_state:
+          length: 24
+          offset: 3349
+        initialized_from_dependency: false
+        encrypted_possible_answer: ojLa0paoXI2HKk5Q63j1GxP6hvM2vdF4NomB+hVfn8Os6irTKDvza58tSsHouGdiQTgVOtt2FaUtKB+Uo6ITpwwyVe1sO9QUhJiFS683+6g7FhKseqM7wmzA8ZXdId5lYQiSBLuEUhtLBHKo9Am8MfTg6LbYx3FA5grAWfuDmxCs2J/Mz2OGFmyqIwWVPpTOy5nXYeqKwoB6NG1sDIc2o3YZn+xjaEMKnW0G983wu8I=
+        selected: false
+        status: Unchecked
+      - offset: 3389
+        length: 22
+        placeholder_text: "# TODO: create trainer"
+        initial_state:
+          length: 22
+          offset: 3389
+        initialized_from_dependency: false
+        encrypted_possible_answer: uhNBGAMc0XP9s++VrqAOSPR1HANGzDc9K4r7v0nVJTTPYjrLYGh2zP7L0fBl2q+0up8se6Ws3I/Xdbw855+98U+f87lWmKKM1mZDkxCCjtSLdCMR4ualAsJ6uubUdvw1IRf8Ctm4z+8i6l1z7L0FFHtVV+c9Uzo9bXUsDEhclBZybLPr9rECfFvWDQnwEF22aUxbsQC0LxENnPbXQABc/u3Ec0l1OjB4kHpWaOzZ0xZmPOLymUOfcCYLbH/gxGwQJIVMaziTeKfsxNU6DXSU9Lz39FUVUZwFk29x1TVtrXE=
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: run.py
+    visible: true
+    learner_created: false
+status: Unchecked
+record: -1
