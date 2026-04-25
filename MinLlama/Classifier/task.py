@@ -1,5 +1,6 @@
 import torch
 import torch.nn.functional as F
+import pickle
 
 from MinLlama.HelperCode.config import LlamaConfig
 from MinLlama.Llama.task import load_pretrained
@@ -52,4 +53,8 @@ class LlamaEmbeddingClassifier(torch.nn.Module):
            logits (unnormalized probabilities) over all classes.
         3) Take the log-softmax of the logits and return log-probabilities over all classes.
         """
-        pass # TODO: implement forward method
+        _, hidden_states = self.llama(input_ids)
+        final_token_hidden_state = hidden_states[:, -1, :]
+        dropped_hidden_state = self.dropout(final_token_hidden_state)
+        logits = self.classifier_head(dropped_hidden_state)
+        return F.log_softmax(logits, dim=-1)

@@ -311,7 +311,7 @@ def load_pretrained(checkpoint):
       torch.amp.autocast(device_type=device_type, dtype=dtype))
 
   # init from a model saved in a specific directory
-  checkpoint_dict = torch.load(checkpoint, map_location=device)
+  checkpoint_dict = torch.load(checkpoint, map_location=device, weights_only=False)
   config = LlamaConfig(**checkpoint_dict['model_args'])
   model = Llama(config)
   state_dict = checkpoint_dict['model']
