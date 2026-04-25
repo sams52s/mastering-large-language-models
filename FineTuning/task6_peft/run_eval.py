@@ -86,5 +86,6 @@ def main(method: str):
         click.echo(json.dumps(output, indent=2))
 
 
+
 if __name__ == "__main__":
     main()

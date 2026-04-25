@@ -22,7 +22,8 @@ class BaseConfig:
         for key in keys:
             if key not in d:
                 raise ValueError(f"Missing required key: {key} in {config_name}")
-            
+
+
     def _validate(self):
         """Validate configuration parameters"""
         required_keys = ["model"]

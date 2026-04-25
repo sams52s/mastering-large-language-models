@@ -31,6 +31,7 @@ class PeftPromptTuningConfig(BaseConfig):
             tokenizer_name_or_path=self.conf["model"]
         )
 
+
     @property
     def training_config(self) -> Dict:
         """Training process configuration"""
