@@ -37,7 +37,17 @@ class DatasetHandler:
         
         Format: Use the TEMPLATE to combine word, definition, and example
         """
-        dataset = # TODO: add "text" column. note: use self.num_proc
+
+        dataset = dataset.map(
+            lambda row: {
+                "text": self.TEMPLATE.format(
+                    word=row["word"],
+                    definition=row["definition"],
+                    example=row["example"],
+                )
+            },
+            num_proc=self.num_proc,
+        )
         return dataset
     
     def process(self, dataset: Dataset, text_col: str = "text") -> Dataset:
@@ -47,8 +57,14 @@ class DatasetHandler:
         """
         dataset = self._add_text_column(dataset)
         
-        # TODO: tokenize the texts and leave only attention mask and input ids in the dataset (both are the result of tokenizer application)
-    
+        dataset = dataset.map(
+            lambda batch: self.tokenizer(batch[text_col]),
+            batched=True,
+            num_proc=self.num_proc,
+            remove_columns=dataset.column_names,
+        )
+        return dataset
+
     def train_test_split(self, dataset: Dataset, test_size: float = 0.15, random_state: int = 42) -> Tuple[Dataset, Dataset]:
         """Split dataset into train and test sets"""
         split_data = dataset.train_test_split(test_size=test_size, seed=random_state)

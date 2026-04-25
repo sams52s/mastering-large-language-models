@@ -6,9 +6,9 @@ import random
 class Prompter:
     # Task: Write prompts & shot_examples
     PROMPT_TEMPLATES = {
-        "basic": # TODO: basic prompt,
-        "instruction": # TODO: instruction prompt,
-        "few_shot": # TODO: few-shot prompt,
+        "basic": "Define the word: {word}\nDefinition: \nExample: ",
+        "instruction": "You are a helpful dictionary assistant. Write a concise definition and one short example sentence for the word: {word}\nDefinition: ",
+        "few_shot": "Here are some examples of words with definitions and example sentences.\n\n{examples}\n\nword: {word}\ndefinition: ",
         "structured": "Here is a definition and an example for the word.\nword: {word}\ndefinition: "
     }
 
