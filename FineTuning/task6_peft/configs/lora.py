@@ -22,8 +22,13 @@ class PeftLoRAConfig(BaseConfig):
     @property
     def peft_config(self) -> PeftConfig:
         return LoraConfig(
-            # TODO: fill in the config
-        )
+            task_type=TaskType.CAUSAL_LM,
+            r=8,
+            lora_alpha=16,
+            lora_dropout=0.05,
+            target_modules=["q_proj", "v_proj"],
+            bias="none",
+            inference_mode=False        )
             
 
     @property

@@ -22,7 +22,9 @@ class PeftIA3Config(BaseConfig):
     @property
     def peft_config(self) -> PeftConfig:
         return IA3Config(
-            # TODO: fill in the config
+            task_type=TaskType.CAUSAL_LM,
+            target_modules=["k_proj", "v_proj", "down_proj"],
+            feedforward_modules=["down_proj"],
             inference_mode=False
         )
 

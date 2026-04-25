@@ -24,7 +24,10 @@ class PeftPromptTuningConfig(BaseConfig):
     def peft_config(self) -> PeftConfig:
         """Create PEFT configuration"""
         return PromptTuningConfig(
-            # TODO: fill in the config
+            task_type=TaskType.CAUSAL_LM,
+            prompt_tuning_init=PromptTuningInit.TEXT,
+            num_virtual_tokens=8,
+            prompt_tuning_init_text="Define the word and provide an example.",
             tokenizer_name_or_path=self.conf["model"]
         )
 
