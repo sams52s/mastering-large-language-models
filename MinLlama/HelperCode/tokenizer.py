@@ -72,11 +72,9 @@ class Tokenizer:
             wheel
             python - m
             pip
-            install - -only - binary =:all: -r
             requirements.txt
             python - m
             pip
-            install - -only - binary =:all: -r
             FineTuning / requirements.txt
             python - c
             "import numpy, scipy, sentencepiece; print(numpy.__version__); print(scipy.__version__); print(sentencepiece.__version__)"
