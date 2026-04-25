@@ -82,7 +82,8 @@ def generate_flashcards(words: List[str], language: str, level: Optional[str] = 
 
             response = client.chat.completions.create(
                 model="openai/gpt-4o-2024-08-06",
-                messages=[{"role": "user", "content": prompt}],None # TODO: Get response content          )
+                messages=[{"role": "user", "content": prompt}],
+            )
 
             content = response.choices[0].message.content
 

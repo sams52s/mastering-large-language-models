@@ -106,10 +106,16 @@ def build_note_from_record(card: FlashcardDB) -> NoteBuild:
 
     # Back includes target word, example_translation, mnemonic, and media references
     back_parts = [
-        *front_parts,
+        card.translation,
+        card.definition,
+        card.example_sentence,
         f"<b>{card.word}</b>",
     ]
-# TODO: add example_translation, definition and mnemonic to Anki card
+
+    if card.mnemonic:
+        back_parts.append(f"<i>🧠 Mnemonic: {card.mnemonic}</i>")
+
+    back = "<br><br>".join(part for part in back_parts if part)
 
     image_fs_path = resolve_media_fs_path(card.image_path)
     audio_fs_path = resolve_media_fs_path(card.audio_path)

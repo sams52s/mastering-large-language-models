@@ -83,9 +83,11 @@ def generate_image(req: ImageRequest, session: Session = Depends(get_session)):
             "Authorization": f"Bearer {task_settings.OPENROUTER_API_KEY}",
             "Content-Type": "application/json"
         }
-        
+
         payload = {
-            # TODO: use gpt-image-1 model to generate images based on the prompt        }
+            "model": "openai/gpt-image-1",
+            "messages": [{"role": "user", "content": prompt}],
+        }
         
         response = requests.post("https://openrouter.ai/api/v1/chat/completions",
                                headers=headers, json=payload)

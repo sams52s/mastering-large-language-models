@@ -81,7 +81,7 @@ def generate_audio(req: AudioRequest, session: Session = Depends(get_session)):
         logger.info(f"Using gTTS language code: {gtts_lang}")
 
         logger.info("Generating audio with gTTS...")
-        tts = None # TODO: implement gTTS call for audio generation
+        tts = tts = gTTS(text=text_to_speak, lang=gtts_lang)
         tts.save(audio_fs_path)
         logger.info(f"Audio saved to local file system: {audio_fs_path}")
 
