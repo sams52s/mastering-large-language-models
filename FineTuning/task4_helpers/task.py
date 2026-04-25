@@ -68,25 +68,31 @@ class Helpers:
         # device_map = {"": "cuda:6"} if torch.cuda.is_available() else "cpu"
         device_map = "auto"
         
-        model = # TODO: load the model. enable offload_state_dict and low_cpu_mem_usage
-        
-        # TODO: Enable gradient checkpointing for memory optimization
-
-        # TODO: if prompt tuning, enable input gradients
-        
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            device_map=device_map,
+            quantization_config=quantization_config,
+            offload_state_dict=True,
+            low_cpu_mem_usage=True,
+        )
+        model.gradient_checkpointing_enable()
+        if is_prompt_tuning:
+            model.enable_input_require_grads()
         # Freeze model parameters
-        # TODO
-
+        for param in model.parameters():
+            param.requires_grad = False
         return model, tokenizer
 
     @staticmethod
     def get_output(model, tokenizer, prompt: str, params: Dict[str, Any], device: str) -> str:
         """Generate text output using model with given parameters"""
-        inputs = # TODO: get input from tokenizer and move it to the device
-        
+        inputs = tokenizer(prompt, return_tensors="pt", return_token_type_ids=False).to(device)
         outputs = model.generate(
+            input_ids=inputs["input_ids"],
+            attention_mask=inputs["attention_mask"],
             eos_token_id=tokenizer.eos_token_id,
-            # TODO: fill in the arguments for `generate()`
+            pad_token_id=tokenizer.pad_token_id,
+            **params,
         )
         return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
