@@ -114,11 +114,16 @@ class GridTrainer:
         self._update_callbacks(self.training_args.output_dir)
 
         # Setup model and trainer
-        peft_model = # TODO: get peft model
+        peft_model = get_peft_model(self.base_model, self.peft_config)
         peft_model.print_trainable_parameters()
 
         trainer = Trainer(
-            # TODO: init Trainer. don't forget about data collator, datasets, and callbacks
+            model=peft_model,
+            args=self.training_args,
+            train_dataset=self.train_dataset,
+            eval_dataset=self.eval_dataset,
+            data_collator=DataCollatorForLanguageModeling(self.base_tokenizer, mlm=False),
+            callbacks=self.default_callbacks,
         )
 
         # Execute training
@@ -180,17 +185,19 @@ class GridTrainer:
 
     def _get_params_grid(self, grid_params: Dict[str, List[Any]]) -> List[Dict[str, Any]]:
         """Generate parameter combinations for grid search."""
-        pass # TODO: YOUR CODE HERE
+        return [
+            dict(zip(grid_params.keys(), values))
+            for values in itertools.product(*grid_params.values())
+        ]
 
     def grid_search(self, grid_params: Dict[str, List[Any]]) -> None:
         """Execute hyperparameter grid search."""
         # Generate parameter combinations
         param_combinations = self._get_params_grid(grid_params)
-        if wandb.run is not None:
-            wandb.log({"total_runs": len(param_combinations)})
-
+        wandb.log({"total_runs": len(param_combinations)})
         for i, params in enumerate(param_combinations):
-            # TODO: update grid parameters and run training
+            self._update_params_grid(i, params)
+            self.train(is_grid=True)
             wandb.log({"completed_runs": i + 1})
 
         wandb.finish()
