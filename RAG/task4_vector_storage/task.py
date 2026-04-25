@@ -33,22 +33,30 @@ class SimpleVectorStore:
         self.dim = self.embeddings.shape[1]
 
         self._normalize_embeddings()
-    
+
     def _normalize_embeddings(self) -> None:
         """Normalize the embeddings in place to unit length."""
-        # TODO: normalize self.embeddings
+        norms = np.linalg.norm(self.embeddings, axis=1, keepdims=True)
+        norms[norms == 0] = 1.0
+        self.embeddings = self.embeddings / norms
 
     def _encode_and_normalize(self, text: str) -> np.ndarray:
         """Encode text and normalize the resulting vector.
-        
+
         Args:
             text: Input text to encode
-            
+
         Returns:
             Normalized embedding vector
         """
-        # TODO: encode and, then, normalize the query text. Don't forget about edge case: embedding equal to zero
+        embedding = self.model.encode(text)
+        embedding = np.asarray(embedding, dtype=np.float32).squeeze()
 
+        norm = np.linalg.norm(embedding)
+        if norm == 0:
+            return embedding
+
+        return embedding / norm
     def search(self, query: str, k: int = 5) -> Tuple[np.ndarray, np.ndarray]:
         """Search for similar vectors.
         
@@ -61,8 +69,10 @@ class SimpleVectorStore:
         """
         k = min(k, self.embeddings.shape[0])
         q = self._encode_and_normalize(query)
-        scores = # TODO: compute scores  # cosine similarity because vectors are unit length
-        idx = # TODO: compute k indices corresponding to top scores in descending order
+        scores = self.embeddings @ q  # cosine similarity because vectors are unit length
+
+        idx = np.argsort(scores)[::-1][:k]
+
         return idx, scores[idx]
 
 
@@ -77,11 +87,10 @@ class Searcher:
             model: SentenceTransformer model for encoding
         """
         print(f"📊 Creating embeddings for {len(data)} items...")
-        emb = # TODO: create embeddings
-        
+        emb = model.encode(data, convert_to_numpy=True, show_progress_bar=True)
+
         self.data = data
         self.store = SimpleVectorStore(emb, model)
-        print(f"✅ Vector store created with {len(data)} items and dimension {emb.shape[1]}")
 
     def search(self, query: str, k: int = 5) -> List[Tuple[str, float]]:
         """Search for similar items.
@@ -94,7 +103,7 @@ class Searcher:
             List of (text, score) tuples for the top-k results
         """
         idx, scores = self.store.search(query, k)
-        # TODO: return texts and scores
+        return [(self.data[i], float(score)) for i, score in zip(idx, scores)]
 
     def save(self, path: Union[str, Path, None] = None) -> None:
         """Save searcher to disk.

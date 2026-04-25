@@ -44,10 +44,27 @@ class TripletDatasetBuilder:
             Dataset with three columns: anchor, positive, negative
         """
         anchors, positives, negatives = [], [], []
+
         for row in raw:
-            # TODO: update the lists above. Don't forget about the guard in case negative_field is not present in the row
-        
-        return # TODO: create HF dataset with fields anchor, positive, negative
+
+            if negative_field not in row:
+                continue
+
+            anchors.append(row["word"])
+
+            positives.append(row["definition"])
+
+            negatives.append(row[negative_field])
+
+        return Dataset.from_dict({
+
+            "anchor": anchors,
+
+            "positive": positives,
+
+            "negative": negatives,
+
+        })
 
     @staticmethod
     def concat_and_split(
@@ -65,6 +82,14 @@ class TripletDatasetBuilder:
         Returns:
             DatasetDict with 'train' and 'eval' splits
         """
-        merged = # TODO: merge datasets
-        split = # TODO: split on train and test (note: don't forget to shuffle)
-        return # TODO: return the result
+        merged = concatenate_datasets(datasets)
+
+        split = merged.shuffle(seed=seed).train_test_split(train_size=train_frac, seed=seed)
+
+        return DatasetDict({
+
+            "train": split["train"],
+
+            "eval": split["test"],
+
+        })

@@ -44,13 +44,20 @@ class InferenceClient:
         model = model_id or self.model_id
         
         # Create a messages array as expected by the new API
-        messages = # TODO: create messages
+        messages = [
+            {"role": "user", "content": prompt}
+        ]
         
         # Make the API call
-        completion = # TODO: retrieve completion result
+        completion = self.hf_client.chat.completions.create(
+            model=model,
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=0.2,
+        )
         
         # Extract just the content string from the response
-        # TODO: return completion content (string)
+        return completion.choices[0].message.content
 
 
 # Default prompt header for dictionary assistant
@@ -69,9 +76,15 @@ def build_prompt(query: str, definitions: List[str], mode: Literal["baseline", "
         Formatted prompt string
     """
     if mode == "baseline":
-        # TODO: build and return baseline prompt
-    else:  # RAG‑enhanced
-        # TODO: build and return rag prompt
+        return f"{PROMPT_HEADER}\n\nWord: {query}\nDefinition:"
+    else:  # RAG-enhanced
+        context = "\n".join(f"- {definition}" for definition in definitions)
+        return (
+            f"{PROMPT_HEADER}\n\n"
+            f"Use the following retrieved definitions as context:\n"
+            f"{context}\n\n"
+            f"Word: {query}\nDefinition:"
+        )
 
 
 def compare_generations(

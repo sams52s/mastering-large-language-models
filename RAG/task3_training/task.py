@@ -40,12 +40,17 @@ def get_peft_model(
         trust_remote_code=True,
         model_card_data=SentenceTransformerModelCardData(language="en", license="apache-2.0"),
     )
-    
+
     lora_cfg = LoraConfig(
-        # TODO: Create LoRA config
+        task_type=TaskType.FEATURE_EXTRACTION,
+        r=r,
+        lora_alpha=alpha,
+        lora_dropout=0.05,
+        target_modules=["query", "key", "value", "dense"],
+        bias="none",
     )
-    
-    # TODO: Add LoRA adapter to the model
+
+    model.add_adapter(lora_cfg)
     
     # Count trainable parameters
     trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -101,14 +106,34 @@ def configure_training(
         warmup_ratio=0.05,
         learning_rate=1e-4,
         lr_scheduler_type="cosine",
-        fp16=True,
+        fp16=False,
 
-        # TODO: add other arguments
+        num_train_epochs=epochs,
+        per_device_train_batch_size=batch_size,
+        per_device_eval_batch_size=batch_size,
+        eval_strategy="steps",
+        eval_steps=eval_steps,
+        save_strategy="steps",
+        save_steps=eval_steps,
+        logging_steps=eval_steps,
+        report_to="none",
     )
 
-    evaluator = # TODO: create evaluator
+    evaluator = TripletEvaluator(
+        anchors=datasets["eval"]["anchor"],
+        positives=datasets["eval"]["positive"],
+        negatives=datasets["eval"]["negative"],
+        name="eval",
+    )
 
-    trainer = # TODO: create trainer
+    trainer = SentenceTransformerTrainer(
+        model=model,
+        args=args,
+        train_dataset=datasets["train"],
+        eval_dataset=datasets["eval"],
+        loss=TripletLoss,
+        evaluator=evaluator,
+    )
     
     return trainer
 
